@@ -1,0 +1,37 @@
+package com.spt.core.service;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+/**
+ * BDRent
+ * User: maheraj
+ * Date: 8/16/2015
+ *
+ */
+@Service
+public class HelloWorldService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldService.class);
+    public String getDesc() {
+        LOGGER.debug("getDesc() is executed!");
+
+        return "Gradle + Spring MVC Hello World Example";
+
+    }
+
+    public String getTitle(String name) {
+        LOGGER.debug("getTitle() is executed! $name : {}", name);
+
+        if(StringUtils.isEmpty(name)){
+            return "Hello World";
+        }else{
+            return "Hello " + name;
+        }
+    }
+
+
+
+
+}
